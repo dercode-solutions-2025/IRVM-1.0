@@ -1,6 +1,6 @@
 # IRVM-1.0
-IRVM, Intermediate Representational Virtual Machine, is a software meant for compilers. It executes IR (called IScript). IScript is interpreted. IRVM was built for LightCobol. IRVM is meant for stack-based languages.
-# Guide
+IRVM, Intermediate Representational Virtual Machine, is a software meant for small compilers. It was built for LightCobol.
+# Bytecode
 Instructions:
 * 0x00 = HALT
 * 0x01 = PUSH <byte>
