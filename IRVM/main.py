@@ -1,18 +1,23 @@
-from insttohex import *
+from insttohex import insttohex
 import sys
 stack = []
-inst = insttohex()
-math = []
-if inst[0] == "0x00":
-  sys.exit()
-elif inst[0] == "0x01":
-  stack.add(inst[1])
-elif inst[0] == "0x02":
-  stack.pop(stack[-1])
-elif inst[0] == "0x03":
-  sum(math.append(stack[-2:]))
-  math = []
-elif inst[0] == "0x04":
-  stack.add(stack[-1] - stack[-2])
-elif inst[0] == "0x05":
-  print(stack[-1])
+program = []
+for line in program:
+    inst = insttohex(line)
+    opcode, arg = inst
+    if opcode == "0x00":
+        break
+    elif opcode == "0x01":
+        stack.append(int(arg))
+    elif opcode == "0x02":
+        stack.pop()
+    elif opcode == "0x03":
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(a + b)
+    elif opcode == "0x04":
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(b - a)
+    elif opcode == "0x05":
+        print(stack[-1])
